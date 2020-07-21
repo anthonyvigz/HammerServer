@@ -15,10 +15,11 @@ router.get("/get", (req, res) => {
 });
 
 router.post("/add", (req, res) => {
-  const data = req.body;
+  const watchlist = req.body;
 
-  Data.updateData(data)
+  Data.updateData(watchlist)
     .then((newData) => {
+      console.log(watchlist);
       res.status(200).json({ newData });
     })
     .catch((err) => {
