@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/anthonyvigz/HammerServer#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "core-util-is": "^1.0.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

@@ -1,6 +1,9 @@
 const router = require("express").Router();
+const bodyParser = require("body-parser");
 
 const Data = require("../models/dataModel.js");
+
+router.use(bodyParser.urlencoded({ extended: false }));
 
 // GET DATA
 
@@ -27,11 +30,11 @@ router.get("/getId", (req, res) => {
 });
 
 router.post("/add", (req, res) => {
-  const watchlist = req.body;
+  const { watchlist } = req.body;
+  console.log(req.body);
 
   Data.updateData(watchlist)
     .then((newData) => {
-      console.log(watchlist);
       res.status(200).json({ newData });
     })
     .catch((err) => {
