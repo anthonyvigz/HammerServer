@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const bcrypt = require("bcryptjs");
 
 const Data = require("../models/dataModel.js");
 

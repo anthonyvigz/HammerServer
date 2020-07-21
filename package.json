@@ -20,8 +20,6 @@
   },
   "homepage": "https://github.com/anthonyvigz/HammerServer#readme",
   "dependencies": {
-    "bcrypt": "^5.0.0",
-    "bcryptjs": "^2.4.3",
     "core-util-is": "^1.0.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
