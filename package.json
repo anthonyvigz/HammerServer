@@ -1,0 +1,34 @@
+{
+  "name": "HammerServer",
+  "version": "1.0.0",
+  "description": "Server for stock market watchlist information.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthonyvigz/HammerServer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anthonyvigz/HammerServer/issues"
+  },
+  "homepage": "https://github.com/anthonyvigz/HammerServer#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "knex": "^0.21.2",
+    "knex-cleaner": "^1.3.0",
+    "nodemon": "^2.0.4",
+    "pg": "^8.3.0",
+    "postgresql": "0.0.1",
+    "supertest": "^4.0.2"
+  }
+}
