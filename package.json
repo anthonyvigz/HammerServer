@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/anthonyvigz/HammerServer#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "core-util-is": "^1.0.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -29,6 +32,7 @@
     "nodemon": "^2.0.4",
     "pg": "^8.3.0",
     "postgresql": "0.0.1",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "webpack-dev-server": "^3.11.0"
   }
 }
