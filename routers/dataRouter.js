@@ -14,6 +14,18 @@ router.get("/get", (req, res) => {
     });
 });
 
+router.get("/getId", (req, res) => {
+  const id = req.body;
+
+  Data.getDataById(id)
+    .then((data) => {
+      res.status(201).json({ data: data });
+    })
+    .catch((err) => {
+      console.log("here", err);
+    });
+});
+
 router.post("/add", (req, res) => {
   const watchlist = req.body;
 
