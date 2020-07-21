@@ -8,9 +8,9 @@ module.exports = {
 };
 
 async function updateData(data) {
-  const [data] = await db.from("data").insert(data).returning("*");
+  const [newData] = await db.from("data").insert(data).returning("*");
 
-  return data || null;
+  return newData || null;
 }
 
 async function getData() {
