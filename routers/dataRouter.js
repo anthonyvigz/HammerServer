@@ -30,7 +30,7 @@ router.get("/getId", (req, res) => {
 });
 
 router.post("/add", (req, res) => {
-  const watchlist = req.body;
+  const watchlist = req.body.toString();
   console.log(watchlist);
 
   Data.updateData(watchlist)
