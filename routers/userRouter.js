@@ -31,6 +31,17 @@ router.post("/login", (req, res) => {
     });
 });
 
+router.get("/", (req, res) => {
+  User.getUserByUsername("pavilion")
+    .then((user) => {
+      res.status(201).json({ user: user });
+    })
+
+    .catch((err) => {
+      res.status(500).json({ message: err });
+    });
+});
+
 router.put("/updateExclude", authentication, (req, res) => {
   let { exclude } = req.body;
 
