@@ -12,7 +12,7 @@ module.exports = {
 
 async function getUserByUsername(username) {
   console.log(username);
-  const [user] = await db.from("user").where({ username });
+  const [user] = await db.from("user").select("*");
 
   console.log(user);
 
