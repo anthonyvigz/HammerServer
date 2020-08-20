@@ -7,6 +7,7 @@ const cors = require("cors");
 // adding routers
 
 const dataRouter = require("./routers/dataRouter");
+const userRouter = require("./routers/userRouter");
 
 const server = express();
 
@@ -19,6 +20,7 @@ server.use(cors());
 // applying endpoints
 
 server.use("/data", dataRouter);
+server.use("/user", userRouter);
 
 // main endpoint
 
