@@ -19,6 +19,6 @@ async function getUserByUsername(username) {
   return user;
 }
 
-function updateExclude(array) {
-  return db.from("user").where("pavilion").update(array);
+function updateExclude(list) {
+  return db.from("user").where("pavilion").update(list);
 }
