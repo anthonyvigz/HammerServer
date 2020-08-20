@@ -8,12 +8,14 @@ const jwt = require("jsonwebtoken");
 const authentication = require("../middleware/authentication");
 
 router.post("/login", (req, res) => {
-  let { username, password } = req.body;
+  let { password } = req.body;
+  console.log(password);
 
   // Finds user by email
 
-  User.getUserByUsername(username)
+  User.getUser()
     .then((user) => {
+      console.log(password, user.password);
       if (user && bcrypt.compareSync(password, user.password)) {
         const token = generateToken(user);
 
@@ -32,7 +34,7 @@ router.post("/login", (req, res) => {
 });
 
 router.get("/", (req, res) => {
-  User.getUserByUsername("pavilion")
+  User.getUser()
     .then((user) => {
       res.status(201).json({ user: user });
     })
@@ -46,11 +48,15 @@ router.put("/updateExclude", authentication, (req, res) => {
   let { exclude } = req.body;
 
   User.updateExclude(exclude)
-    .then((list) => {
-      res.status(200).json({
-        exclude: list,
-        message: `New exclude list: ${exclude}`,
-      });
+    .then(() => {
+      User.getUser()
+        .then((user) => {
+          res.status(201).json({ user: user });
+        })
+
+        .catch((err) => {
+          res.status(500).json({ message: err });
+        });
     })
     .catch((err) => {
       res.status(500).json({ message: "Couldn't update list" });

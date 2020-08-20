@@ -4,21 +4,19 @@ const db = require("../data/db-config"); // imports database
 
 module.exports = {
   // Read
-  getUserByUsername,
+  getUser,
 
   // Update
   updateExclude,
 };
 
-async function getUserByUsername(username) {
-  console.log(username);
-  const [user] = await db.from("user").select("*");
+async function getUser() {
+  const user = await db.from("user").select("*");
 
-  console.log(user);
-
-  return user;
+  return user[0];
 }
 
-function updateExclude(list) {
-  return db.from("user").where("pavilion").update(list);
+async function updateExclude(list) {
+  console.log("here1");
+  return db("user").update({ exclude: list });
 }
