@@ -63,6 +63,23 @@ router.put("/updateExclude", authentication, (req, res) => {
     });
 });
 
+router.put("/removeExclude", (req, res) => {
+  User.updateExclude("")
+    .then(() => {
+      User.getUser()
+        .then((user) => {
+          res.status(201).json({ user: user });
+        })
+
+        .catch((err) => {
+          res.status(500).json({ message: err });
+        });
+    })
+    .catch((err) => {
+      res.status(500).json({ message: "Couldn't update list" });
+    });
+});
+
 // GENERATES A CRYPTED TOKEN BASED ON EMAIL AND USER ID
 
 function generateToken(user) {
